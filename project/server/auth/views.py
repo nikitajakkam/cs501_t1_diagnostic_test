@@ -22,7 +22,7 @@ class RegisterAPI(MethodView):
 
     def post(self):
         # get the post data
-        post_data = request.get_json(); print(request)
+        post_data = request.get_json(force=True); print(request)
         # check if user already exists
         user = User.query.filter_by(email=post_data.get('email')).first()
         if not user:
