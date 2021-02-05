@@ -26,6 +26,7 @@ class RegisterAPI(MethodView):
             post_data = request.get_json(force=True); print(request)
         except Exception as e:
                 print(e)
+                print("hello")
                 responseObject = {
                     'status': 'Fail',
                     'message': 'A Database connection issue??'
