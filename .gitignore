@@ -12,5 +12,5 @@ __pycache__
 env.sh
 
 # Add SQLITE DB
-diagnostic
+#diagnostic
 diagnostic_test
