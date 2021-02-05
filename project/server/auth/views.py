@@ -22,7 +22,15 @@ class RegisterAPI(MethodView):
 
     def post(self):
         # get the post data
-        post_data = request.get_json(force=True); print(request)
+        try:
+            post_data = request.get_json(force=True); print(request)
+        except Exception as e:
+                print(e)
+                responseObject = {
+                    'status': 'Fail',
+                    'message': 'A Database connection issue??'
+                }
+                return make_response(jsonify(responseObject)), 401
         # check if user already exists
         user = User.query.filter_by(email=post_data.get('email')).first()
         if not user:
